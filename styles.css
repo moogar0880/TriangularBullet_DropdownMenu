@@ -1,0 +1,77 @@
+body{font-family:Trebuchet MS; color:#030248;}
+h2{font-style: italic}
+
+ul{
+    list-style-type:none;
+}
+
+.inner, .info{
+    display: none;
+}
+
+#MainNavigation{
+    font-size: 24px;
+}
+
+.inner{
+    font-size: 22px;
+}
+
+#MainNavigation li{
+    cursor: pointer;
+}
+
+.info{
+    font-size: 16px;
+}
+
+.bulleted{
+  list-style-type:disc;
+}
+
+p {
+    color: rgb(51, 51, 51);
+    cursor: auto;
+}
+
+.up:before{
+	content: "";
+    border-color: transparent #030248;
+    border-style: solid;
+    border-width: 0.30em 0 0.25em 0.35em;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: -0.1em;
+    position: relative;
+    -webkit-transition:all 0.15s linear;
+    -moz-transition:all 0.15s linear;
+    -o-transition:all 0.15s linear;
+    transition:all 0.15s linear;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.down:before{
+	content: "";
+    border-color: transparent #030248;
+    border-style: solid;
+    border-width: 0.30em 0 0.25em 0.35em;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: -0.1em;
+    position: relative;
+    -webkit-transition:all 0.15s linear;
+    -moz-transition:all 0.15s linear;
+    -o-transition:all 0.15s linear;
+    transition:all 0.15s linear;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}

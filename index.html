@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sample Menu</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//List Toggle Function
+$(document).ready(function() {
+  return $("li.drop-down").click(function(e) {
+    var kid, kids, _i, _j, _len, _len1;
+    e.stopPropagation();
+    if ($(this).hasClass("up")) {
+      $(this).removeClass("up");
+      $(this).addClass("down");
+    } else {
+      $(this).removeClass("down");
+      $(this).addClass("up");
+    }
+    if ($(this).children().length > 0) {
+      kids = $(this).children();
+      if ($(kids[0]).hasClass("up")) {
+        for (_i = 0, _len = kids.length; _i < _len; _i++) {
+          kid = kids[_i];
+          if ($(kid)[0].tagName !== "P" && $(kid)[0].tagName !== "A") {
+            $(kid).fadeToggle();
+          }
+        }
+        return $(this).children();
+      } else {
+        for (_j = 0, _len1 = kids.length; _j < _len1; _j++) {
+          kid = kids[_j];
+          if ($(kid)[0].tagName !== "P" && $(kid)[0].tagName !== "A" && $(kid).attr("id") !== "perm") {
+            $(kid).fadeToggle();
+          }
+        }
+        return $(this).children();
+      }
+    }
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="MainNavigation">
+    <ul>
+        <li>Menu 1 Is Locked Open
+            <ul>
+                <li class="up drop-down">Sub-Menu 1
+                    <ul class="inner">
+                        <li class="up drop-down">Sub-Menu 1.1
+                            <ul class="info">
+                                <li><p>Sub-Menu 1.1's Content.</p></li>
+                            </ul>
+                        </li>
+                        <li class="up drop-down">Sub-Menu 1.2
+                            <ul class="info">
+                                <li class="up drop-down">Sub-Menu 1.2.1
+                                    <ul class="info">
+                                        <li>Sub Menu 1.2.1's Content.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="up drop-down">Sub-Menu 2
+                    <ul class="info">
+                        <li><p>Sub-Menu 2.1 will highlight using standard lists within these drown down lists.</p></li>
+                        <li class="up drop-down">Sub-Menu 2.1
+                            <ul class="info bulleted">
+                                <li>Normal List Item 1</li>
+                                <li>Normal List Item 2</li>
+                                <li>Normal List Item 3</li>
+                                <li>Normal List Item 4</li>
+                            </ul>
+                        </li>
+                        <li class="up drop-down">Sub-Menu 2.2
+                            <p>Sub-Menu 2.2's Content.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
